@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from neural_network_numpy.Model_numpy import Model_numpy
 from neural_network_plain_python.Model_plain_python import Model_plain_python
+import os
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS so your React app can talk to this API
@@ -38,7 +39,10 @@ def predict():
 
 if __name__ == '__main__':
 
+    port = int(os.environ.get("PORT", 5000))
+    
     model_numpy = Model_numpy()
     model_plain_python = Model_plain_python()
 
-    app.run(debug=True)
+    # app.run(debug=True)
+    app.run(host='0.0.0.0', port=port)
