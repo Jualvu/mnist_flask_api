@@ -1,0 +1,11 @@
+*.csv
+*.pyc
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+
+# VS Code specific temporary file
+tempCodeRunnerFile.py
+
+# VS Code settings (optional but common)
+.vscode/
